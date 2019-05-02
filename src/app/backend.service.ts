@@ -4,7 +4,8 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { tap } from "rxjs/operators";
 import { JwtHelperService } from "@auth0/angular-jwt";
 
-const authServiceUrl = "https://backend-framework62-aladin53.herokuapp.com/";
+//const authServiceUrl = "https://backend-framework62-aladin53.herokuapp.com/";
+const authServiceUrl = "https://backend-framework62.herokuapp.com/";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -96,5 +97,16 @@ export class BackendService {
     } else {
       return false;
     }
+  }
+  countAllUser() {
+    return this.http
+      .get<any>(authServiceUrl + "user/list-count", httpOptions)
+      .pipe();
+  }
+
+  getListUser(pageNumber: number) {
+    return this.http
+      .get<any>(authServiceUrl + "user/list/" + pageNumber, httpOptions)
+      .pipe();
   }
 }
