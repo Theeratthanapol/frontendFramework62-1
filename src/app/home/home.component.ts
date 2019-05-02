@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
       err => {
         Swal.fire({
           type: "error",
-          title: "แจง้ เตือน",
+          title: "แจ้ง เตือน",
           text: "ไม่มีสิทธิ์เขา้ ใช้งานในส่วนนี้"
         });
       }
